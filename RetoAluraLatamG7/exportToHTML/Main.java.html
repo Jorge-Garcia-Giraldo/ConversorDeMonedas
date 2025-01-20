@@ -1,0 +1,81 @@
+<html>
+<head>
+<title>Main.java</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #cf8e6d;}
+.s1 { color: #bcbec4;}
+.s2 { color: #bcbec4;}
+.s3 { color: #2aacb8;}
+.s4 { color: #6aab73;}
+.s5 { color: #7a7e85;}
+</style>
+</head>
+<body bgcolor="#1e1f22">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+Main.java</font>
+</center></td></tr></table>
+<pre><span class="s0">import </span><span class="s1">java</span><span class="s2">.</span><span class="s1">util</span><span class="s2">.</span><span class="s1">Scanner</span><span class="s2">;</span>
+
+<span class="s0">public class </span><span class="s1">Main </span><span class="s2">{</span>
+    <span class="s0">public static void </span><span class="s1">main</span><span class="s2">(</span><span class="s1">String</span><span class="s2">[] </span><span class="s1">args</span><span class="s2">) {</span>
+        <span class="s0">int </span><span class="s1">opcionmarcada</span><span class="s2">=</span><span class="s3">0</span><span class="s2">;</span>
+        <span class="s1">ConexionAPI prueba</span><span class="s2">=</span><span class="s0">new </span><span class="s1">ConexionAPI</span><span class="s2">();</span>
+        <span class="s1">Moneda pruebaMoney</span><span class="s2">= </span><span class="s1">prueba</span><span class="s2">.</span><span class="s1">consultaMoneda</span><span class="s2">(</span><span class="s4">&quot;USD&quot;</span><span class="s2">);</span>
+        <span class="s1">Scanner opcion</span><span class="s2">=</span><span class="s0">new </span><span class="s1">Scanner</span><span class="s2">(</span><span class="s1">System</span><span class="s2">.</span><span class="s1">in</span><span class="s2">);</span>
+        <span class="s1">Scanner monto</span><span class="s2">=</span><span class="s0">new </span><span class="s1">Scanner</span><span class="s2">(</span><span class="s1">System</span><span class="s2">.</span><span class="s1">in</span><span class="s2">);</span>
+        <span class="s0">while</span><span class="s2">(</span><span class="s1">opcionmarcada</span><span class="s2">!=</span><span class="s3">7</span><span class="s2">){</span>
+            <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s4">&quot;ingrese una opcion:&quot;</span><span class="s2">);</span>
+            <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s4">&quot;1)dolar a peso argentino&quot;</span><span class="s2">);</span>
+            <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s4">&quot;2)peso argentino a dolar&quot;</span><span class="s2">);</span>
+            <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s4">&quot;3)dolar a real brasilenio&quot;</span><span class="s2">);</span>
+            <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s4">&quot;4)real brasilenio a dolar&quot;</span><span class="s2">);</span>
+            <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s4">&quot;5)dolar a peso colombiano&quot;</span><span class="s2">);</span>
+            <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s4">&quot;6)peso colombiano a dolar&quot;</span><span class="s2">);</span>
+            <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s4">&quot;7) salir&quot;</span><span class="s2">);</span>
+            <span class="s1">opcionmarcada</span><span class="s2">=</span><span class="s1">opcion</span><span class="s2">.</span><span class="s1">nextInt</span><span class="s2">();</span>
+            <span class="s0">float </span><span class="s1">conversion</span><span class="s2">;</span>
+            <span class="s0">switch</span><span class="s2">(</span><span class="s1">opcionmarcada</span><span class="s2">){</span>
+                <span class="s0">case </span><span class="s3">1</span><span class="s2">:</span><span class="s5">//USD to ARS</span>
+                    <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s4">&quot;Ingrese monto a convertir&quot;</span><span class="s2">);</span>
+                    <span class="s1">conversion </span><span class="s2">=</span><span class="s1">monto</span><span class="s2">.</span><span class="s1">nextFloat</span><span class="s2">()*</span><span class="s1">pruebaMoney</span><span class="s2">.</span><span class="s1">conversion_rates</span><span class="s2">().</span><span class="s1">ARS</span><span class="s2">();</span>
+                    <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s4">&quot;el monto es:&quot;</span><span class="s2">+</span><span class="s1">conversion</span><span class="s2">);</span>
+                    <span class="s0">break</span><span class="s2">;</span>
+                <span class="s0">case </span><span class="s3">2</span><span class="s2">:</span><span class="s5">//ARS to USD</span>
+                    <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s4">&quot;Ingrese monto a convertir&quot;</span><span class="s2">);</span>
+                    <span class="s1">conversion </span><span class="s2">=</span><span class="s1">monto</span><span class="s2">.</span><span class="s1">nextFloat</span><span class="s2">()*(</span><span class="s3">1</span><span class="s2">/</span><span class="s1">pruebaMoney</span><span class="s2">.</span><span class="s1">conversion_rates</span><span class="s2">().</span><span class="s1">ARS</span><span class="s2">());</span>
+                    <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s4">&quot;el monto es:&quot;</span><span class="s2">+</span><span class="s1">conversion</span><span class="s2">);</span>
+                    <span class="s0">break</span><span class="s2">;</span>
+                <span class="s0">case </span><span class="s3">3</span><span class="s2">:</span><span class="s5">//usd to brl</span>
+                    <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s4">&quot;Ingrese monto a convertir&quot;</span><span class="s2">);</span>
+                    <span class="s1">conversion </span><span class="s2">=</span><span class="s1">monto</span><span class="s2">.</span><span class="s1">nextFloat</span><span class="s2">()*</span><span class="s1">pruebaMoney</span><span class="s2">.</span><span class="s1">conversion_rates</span><span class="s2">().</span><span class="s1">BRL</span><span class="s2">();</span>
+                    <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s4">&quot;el monto es:&quot;</span><span class="s2">+</span><span class="s1">conversion</span><span class="s2">);</span>
+                    <span class="s0">break</span><span class="s2">;</span>
+                <span class="s0">case </span><span class="s3">4</span><span class="s2">:</span><span class="s5">//brl to usd</span>
+                    <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s4">&quot;Ingrese monto a convertir&quot;</span><span class="s2">);</span>
+                    <span class="s1">conversion </span><span class="s2">=</span><span class="s1">monto</span><span class="s2">.</span><span class="s1">nextFloat</span><span class="s2">()*(</span><span class="s3">1</span><span class="s2">/</span><span class="s1">pruebaMoney</span><span class="s2">.</span><span class="s1">conversion_rates</span><span class="s2">().</span><span class="s1">BRL</span><span class="s2">());</span>
+                    <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s4">&quot;el monto es:&quot;</span><span class="s2">+</span><span class="s1">conversion</span><span class="s2">);</span>
+                    <span class="s0">break</span><span class="s2">;</span>
+                <span class="s0">case </span><span class="s3">5</span><span class="s2">:</span><span class="s5">//usd to cop</span>
+                    <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s4">&quot;Ingrese monto a convertir&quot;</span><span class="s2">);</span>
+                    <span class="s1">conversion </span><span class="s2">=</span><span class="s1">monto</span><span class="s2">.</span><span class="s1">nextFloat</span><span class="s2">()*</span><span class="s1">pruebaMoney</span><span class="s2">.</span><span class="s1">conversion_rates</span><span class="s2">().</span><span class="s1">COP</span><span class="s2">();</span>
+                    <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s4">&quot;el monto es:&quot;</span><span class="s2">+</span><span class="s1">conversion</span><span class="s2">);</span>
+                    <span class="s0">break</span><span class="s2">;</span>
+                <span class="s0">case </span><span class="s3">6</span><span class="s2">:</span><span class="s5">//cop to usd</span>
+                    <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s4">&quot;Ingrese monto a convertir&quot;</span><span class="s2">);</span>
+                    <span class="s1">conversion </span><span class="s2">=</span><span class="s1">monto</span><span class="s2">.</span><span class="s1">nextFloat</span><span class="s2">()*(</span><span class="s3">1</span><span class="s2">/</span><span class="s1">pruebaMoney</span><span class="s2">.</span><span class="s1">conversion_rates</span><span class="s2">().</span><span class="s1">COP</span><span class="s2">());</span>
+                    <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s4">&quot;el monto es:&quot;</span><span class="s2">+</span><span class="s1">conversion</span><span class="s2">);</span>
+                    <span class="s0">break</span><span class="s2">;</span>
+                <span class="s0">case </span><span class="s3">7</span><span class="s2">:</span><span class="s5">//salida</span>
+                    <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s4">&quot;Hasta la proxima!&quot;</span><span class="s2">);</span>
+                    <span class="s0">break</span><span class="s2">;</span>
+                <span class="s0">default</span><span class="s2">:</span>
+                    <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s4">&quot;opcion invalida&quot;</span><span class="s2">);</span>
+            <span class="s2">}</span>
+        <span class="s2">}</span>
+    <span class="s2">}</span>
+<span class="s2">}</span></pre>
+</body>
+</html>
